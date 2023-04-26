@@ -1,6 +1,6 @@
-<!-- title: Clase Barco -->
+<!-- title: Programa -->
 
-- [1. Clase Barco](#1-clase-barco)
+- [1. Clases](#1-clase-barco)
   - [1.1. Instalación](#11-instalación)
   - [1.2. Descripción](#12-descripción)
   - [1.3. Funcionalidades](#13-funcionalidades)
@@ -10,11 +10,14 @@
   - [1.7. Créditos y atribuciones](#17-créditos-y-atribuciones)
   - [1.8. License](#18-license)
 
-# 1. Clase Barco
+# 1. Clases
 
 **Barco**
 
 Este es un proyecto Java que define la clase Barco que extiende la clase Vehiculo.
+
+**Coche**
+Clase Coche también extiende de vehiculo e implementa etiquetas hibernate
 
 ## 1.1. Instalación
 
@@ -23,6 +26,8 @@ Si hubiese un método para instalar o ejecutar el proyecto, se indicaría aquí.
 ## 1.2. Descripción
 
 La clase Barco representa un vehículo acuático y se utiliza para instanciar objetos que contienen información sobre el color, la marca, el precio, la matrícula y el tipo de barco. La clase también tiene un método para arrancar el barco y establecer la hora de inicio del viaje.
+
+Añadimos la gestión con una base de datos que crea automáticamente donde realizaremos distintas interacciones con ella
 Funcionalidades
 
 ## 1.3. Funcionalidades
