@@ -1,21 +1,48 @@
 package prueba.semana1;
 
 import java.util.Date;
+import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
+import lombok.*;
+
 
 /**
  * Vehiculo.java Clase para el objecto Vehiculo
  */
+//@buscar JPA con clases abstractas
+
+@MappedSuperclass
 public abstract class Vehiculo implements Conducible {
-    protected String color;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private final Long id = null;
+	
+	@Column(name="color")
+	protected String color;
+	
+	@Column(name="marca")
     protected String marca;
+	
+	@Column(name="precio")
     protected String precio;
+	
+	@Column(name="matricula")
     protected String matricula;
+    
+	@Column
     protected int numRuedas;
+    
+	@Column
     private boolean arrancado = false;
+	
+	@Column
     protected static final String TIPO = "Vehiculo";
 
     // Variables del viaje
+    @Column
     protected Date horaInicio;
+    @Column
     protected int distanciaRecorrida = 0;
 
     /**
@@ -36,6 +63,10 @@ public abstract class Vehiculo implements Conducible {
         this.matricula = matricula;
 
     }
+    protected Vehiculo() {
+    	super(); 	
+    }
+    
 
     /**
      * Impresión de los datos del vehiculo.

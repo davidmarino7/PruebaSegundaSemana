@@ -1,11 +1,23 @@
 package prueba.semana1;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Coche.java Clase para el objecto Coche
  */
+@Entity
+@Table(name="coche")
 public class Coche extends Vehiculo {
-
+	
+	@Column(name="tipoMarchas")
     private String tipoMarchas;
+	
+	
     protected static final String TIPO = "Coche";
 
     /**
@@ -27,10 +39,17 @@ public class Coche extends Vehiculo {
         this.tipoMarchas = tipoMarchas;
 
     }
-
+    
+    public Coche() {
+    	super(); 	
+    }
+    
+  
     public String getTipoMarchas() {
         return tipoMarchas;
     }
+    
+    
 
     /**
      * imprime los datos del coche.
@@ -42,5 +61,14 @@ public class Coche extends Vehiculo {
         System.out.println("Este coche tiene una marcha " + tipoMarchas);
         super.imprimirDatos();
     }
+
+	@Override
+	public String toString() {
+		return "Coche [tipoMarchas=" + tipoMarchas + ", color=" + color + ", marca=" + marca + ", precio=" + precio
+				+ ", matricula=" + matricula + ", numRuedas=" + numRuedas + ", horaInicio=" + horaInicio
+				+ ", distanciaRecorrida=" + distanciaRecorrida + "]";
+	}
+    
+    
 
 }
