@@ -50,6 +50,8 @@ TODO: Cómo se debe usar el proyecto.
 
 Para utilizar la clase Barco, primero debe instanciar un objeto pasando los argumentos adecuados al constructor. Luego, puede llamar a los métodos getTipoBarco() y arrancar() según sea necesario.
 
+Para utilizar Coche Controller debemos crear un coche nuevo y pasarle los parametros deseados. Una vez hecho esto corremos el programa y seleccionamos una de las 2 opciones, ingresar el nuevo coche o buscar uno en la lista por el ID.
+
 ## 1.5. Contribuir
 
 1. Fork it!
