@@ -36,12 +36,11 @@ La clase Barco tiene las siguientes funcionalidades:
     parar(): Para el barco y muestra la hora de inicio y fin del viaje. Si el barco no está en marcha, muestra un mensaje de aviso.
     avanzar(int distancia): Avanza el barco la cantidad de metros indicada. Si el barco no está en marcha, muestra un mensaje de aviso.
     imprimirDatos(): Muestra los datos del barco.
+    
+Nuevas funcionalidades:
+ 
+Se implementa hibernate con JPA y persistimos distintas propiedades. Realizamos mediante CocheController la inserción y la muestra de Coches mediante su ID en una base de datos limpia, donde se crean automáticamente las tablas al ejecutarse.
 
-```java
-Barco barco = new Barco("Azul", "Marca", "5000", "1234ABC", "Tipo de Barco");
-String tipoBarco = barco.getTipoBarco();
-barco.arrancar();
-```
 
 ## 1.4. Uso
 
@@ -67,11 +66,13 @@ Para utilizar la clase Barco, primero debe instanciar un objeto pasando los argu
 - Version 0.4 (2023-04-22) - añadido método parar()
 - Version 0.5 (2023-04-23) - añadido resto de métodos
 - Version 0.6 (2023-04-24) - Pruebas unitarias y correcciones
+- Version 0.7 (2023-04-26) - Creación de tablas, guardado y muestra de las mismas con Coche.
 
 ## 1.7. Créditos y atribuciones
 
 Lead Developer - Antoni (@antoni_dev)
 Mentor - Carlos (@blah_blah)
+Co-Developer - David (@david)
 
 ## 1.8. License
 

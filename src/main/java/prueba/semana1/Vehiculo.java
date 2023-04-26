@@ -9,34 +9,35 @@ import lombok.*;
 /**
  * Vehiculo.java Clase para el objecto Vehiculo
  */
-//@buscar JPA con clases abstractas
 
-@MappedSuperclass
+//MappedSuperClass para indicar que es una clase de la cual van a extender otras clases
+@MappedSuperclass 
 public abstract class Vehiculo implements Conducible {
+	
+	protected String color;
+    protected String marca;
+    protected String precio;
+    protected String matricula;
+	
+	/**
+	 * @Id, @GeneratedValue     indicamos cual es el Id PrimaryKey y definimos que se genera incrementalmente 
+	 * 
+	 * @Column 					definimos las distintas columnas de la tabla con su respectivo nombre en la base de datos
+	 */
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private final Long id = null;
 	
-	@Column(name="color")
-	protected String color;
-	
-	@Column(name="marca")
-    protected String marca;
-	
-	@Column(name="precio")
-    protected String precio;
-	
-	@Column(name="matricula")
-    protected String matricula;
-    
-	@Column
+	/**
+	 * Los atributos declarados de tipo Transient, se definen así porque estes no van a ser persistentes ya que son fijos.
+	 */
+
+	@Transient
     protected int numRuedas;
-    
-	@Column
+	@Transient
     private boolean arrancado = false;
-	
-	@Column
+	@Transient
     protected static final String TIPO = "Vehiculo";
 
     // Variables del viaje
@@ -47,7 +48,7 @@ public abstract class Vehiculo implements Conducible {
 
     /**
      * Constructor de la clase Vehiculo.
-     *
+     * @param id		id del vehiculo
      * @param color     color del vehiculo
      * @param marca     marca del vehiculo
      * @param precio    precio del vehiculo
@@ -66,8 +67,7 @@ public abstract class Vehiculo implements Conducible {
     protected Vehiculo() {
     	super(); 	
     }
-    
-
+   
     /**
      * Impresión de los datos del vehiculo.
      */

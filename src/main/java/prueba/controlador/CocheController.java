@@ -18,13 +18,15 @@ public static void main(String[] args) {
 		
 		int opcion = 0;  //inicializamos variable para las opciones 
 		
+		
+		// clase que permite leer los datos que el usuario introduce por scanner
 		try (Scanner scanner = new Scanner(System.in)) {
-			// clase que permite leer los datos que el
-			//usuario introduce por teclado
-			Vehiculo vehiculo;
-			Coche coche; // variable de tipo Producto
 			
-			//Objeto entity para crear conexi�n a base
+
+			// variable de tipo Coche
+			Coche coche; 
+			
+			//Objeto entity para crear conexión a base de datos
 			EntityManager entity = JPAPersistence.getEntityManagerFactory().createEntityManager();
 			
 			//hacemos un loop mientras se vayan ingresando el n�mero de opciones
@@ -38,30 +40,29 @@ public static void main(String[] args) {
 
 				opcion = scanner.nextInt();
 				
-				switch (opcion) { //realizamos el switch de acuerdo a la opci�n ingresada
+				switch (opcion) { //realizamos el switch de acuerdo a la opción ingresada
 				case 1:
-					//instaciamos al objeto
+					//instaciamos al objeto Coche y le pasamos los datos
 					coche = new Coche("Verde","Chevrolet","40000","5454ASF","4"); 
 				
 					//A traves de objeto entity
-					entity.getTransaction().begin(); //aqui le digo que inicie la transacci�n
-					entity.persist(coche); //aqui le indico a trav�s del m�todo persidt que guarde en BD
+					entity.getTransaction().begin(); //aqui le digo que inicie la transacción
+					entity.persist(coche); //en este paso lo guardamos en la Base de Datos
 					entity.getTransaction().commit(); //aqui le indico que culmine
 					
 					System.out.println("Coche registrado..");
-					System.out.println();
+					
 					break;
 
 				case 2:
-					System.out.println("Digite el id del producto a buscar:");
+					System.out.println("Digite el id del coche a buscar:");
 					
-					//con el m�todo find realiza una b�squeda por id en la tabla
-					//le pasamos dos parametros, la clase Producto y el ID a trav�s del scanner
-					
+					//con el método find realiza una búsqueda por id en la tabla
+					//le pasamos dos parametros, la clase Producto y el ID a través del scanner					
 					coche = entity.find(Coche.class, scanner.nextLong()); 
 					
-					
-					if (coche != null) { //aqui validamos si es diferente de null
+					//validamos si existe el coche, si existe imprímelo, si no imprime el sysOut
+					if (coche != null) { 
 						System.out.println(coche); //imprimimos el producto
 						
 					}else {

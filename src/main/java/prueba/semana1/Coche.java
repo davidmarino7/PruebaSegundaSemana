@@ -10,10 +10,13 @@ import javax.persistence.Table;
 /**
  * Coche.java Clase para el objecto Coche
  */
+
+//Definimos la Entidad Coche y le decimos qué tabla es en la base de datos
 @Entity
 @Table(name="coche")
 public class Coche extends Vehiculo {
 	
+	//Definimos la columna y su correspondiente nombre en la base de datos
 	@Column(name="tipoMarchas")
     private String tipoMarchas;
 	
@@ -48,8 +51,6 @@ public class Coche extends Vehiculo {
     public String getTipoMarchas() {
         return tipoMarchas;
     }
-    
-    
 
     /**
      * imprime los datos del coche.
